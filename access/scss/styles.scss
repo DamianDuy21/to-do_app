@@ -117,7 +117,6 @@ li {
 
                     .task-name {
                         max-width: 300px;
-                        // border: 1px solid #ccc;
                         overflow: hidden;
                         text-overflow: ellipsis;
                     }
@@ -241,4 +240,16 @@ li {
 
     }
 
+}
+
+@media (max-width: 576px) {
+    .card {
+        #task-list {
+            .task {
+                .task-name {
+                    width: 150px;
+                }
+            }
+        }
+    }
 }

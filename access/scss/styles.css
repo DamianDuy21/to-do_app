@@ -212,4 +212,10 @@ li {
   background-position: center;
   top: 8px;
   left: 4px;
+}
+
+@media (max-width: 576px) {
+  .card #task-list .task .task-name {
+    width: 150px;
+  }
 }/*# sourceMappingURL=styles.css.map */
