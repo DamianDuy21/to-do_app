@@ -1,3 +1,23 @@
+//text-to-speech
+let speech = new SpeechSynthesisUtterance();
+
+let voices = [];
+let voiceSelect = document.querySelector("select")
+
+window.speechSynthesis.onvoiceschanged = () => {
+    voices = window.speechSynthesis.getVoices()
+    speech.voice = voices[0]
+
+    voices.forEach((item, index) => (
+        voiceSelect.options[index] = new Option(item.name, index)
+    ))
+}
+
+voiceSelect.addEventListener("change", () => {
+    speech.voice = voices[voiceSelect.value]
+})
+
+
 const taskList = document.getElementById("task-list")
 const addBtn = document.getElementById("add-btn")
 displayData()
@@ -27,6 +47,9 @@ function addToDo(content) {
         <span class="material-symbols-outlined delete-btn">
             delete
         </span>
+        <span class="material-symbols-outlined play-btn">
+            play_arrow
+        </span>
         <span class="material-symbols-outlined close-btn">
             close
         </span>
@@ -54,6 +77,10 @@ taskList.addEventListener("click", (e) => {
 
     //edit
     if (e.target.innerText == "edit") {
+        let li = e.target.parentElement
+        let value1 = li.querySelector(".task-name")
+        let value2 = li.querySelector("#task-name-new")
+        value2.value = value1.innerHTML.trim()
         e.target.parentElement.classList.add("editing")
         saveData()
     }
@@ -84,6 +111,16 @@ taskList.addEventListener("click", (e) => {
         saveData()
     }
 
+    //text-to-speech
+    if (e.target.innerText == "play_arrow") {
+        console.log(e.target)
+        let li = e.target.parentElement
+        console.log(li)
+        speech.text = li.querySelector(".task-name").innerHTML
+        window.speechSynthesis.speak(speech)
+
+    }
+
 })
 
 function saveData() {
@@ -94,3 +131,7 @@ function displayData() {
     let data = localStorage.getItem("data")
     taskList.innerHTML = data
 }
+
+
+
+

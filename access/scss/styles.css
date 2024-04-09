@@ -55,7 +55,7 @@ li {
   background: #edeef0;
   border-radius: 32px;
   padding-left: 24px;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 .todo-app .container .card .row input {
   flex-grow: 1;
@@ -71,6 +71,27 @@ li {
   border-radius: 32px;
   min-width: -moz-max-content;
   min-width: max-content;
+}
+.todo-app .container .card select {
+  width: 100%;
+  cursor: pointer;
+  padding: 0 16px;
+  flex-grow: 1;
+  color: #fff;
+  background: #403d84;
+  height: 48px;
+  outline: none;
+  border: none;
+  border-radius: 32px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("../../access/images/dropdown.png");
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position-x: calc(100% - 16px);
+  background-position-y: center;
+  margin-bottom: 24px;
 }
 .todo-app .container .card #task-list {
   display: grid;
@@ -113,7 +134,8 @@ li {
 }
 .todo-app .container .card #task-list .task.editing .delete-btn,
 .todo-app .container .card #task-list .task.editing .edit-btn,
-.todo-app .container .card #task-list .task.editing .task-name {
+.todo-app .container .card #task-list .task.editing .task-name,
+.todo-app .container .card #task-list .task.editing .play-btn {
   display: none;
 }
 .todo-app .container .card #task-list .task.editing .close-btn,
@@ -131,7 +153,8 @@ li {
 .todo-app .container .card #task-list .task .delete-btn,
 .todo-app .container .card #task-list .task .edit-btn,
 .todo-app .container .card #task-list .task .close-btn,
-.todo-app .container .card #task-list .task .done-btn {
+.todo-app .container .card #task-list .task .done-btn,
+.todo-app .container .card #task-list .task .play-btn {
   position: absolute;
   right: 0;
   top: 2px;
@@ -145,7 +168,8 @@ li {
 .todo-app .container .card #task-list .task .delete-btn:hover,
 .todo-app .container .card #task-list .task .edit-btn:hover,
 .todo-app .container .card #task-list .task .close-btn:hover,
-.todo-app .container .card #task-list .task .done-btn:hover {
+.todo-app .container .card #task-list .task .done-btn:hover,
+.todo-app .container .card #task-list .task .play-btn:hover {
   background-color: #edeef0;
   border-radius: 50%;
 }
@@ -156,6 +180,10 @@ li {
 .todo-app .container .card #task-list .task .edit-btn,
 .todo-app .container .card #task-list .task .close-btn {
   right: 40px;
+}
+.todo-app .container .card #task-list .task .play-btn {
+  right: 80px;
+  font-size: 24px;
 }
 .todo-app .container .card #task-list .task::before {
   content: "";
