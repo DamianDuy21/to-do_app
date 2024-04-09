@@ -38,46 +38,11 @@ function addToDo(content) {
     taskList.appendChild(li)
     saveData()
 }
-// function editToDo(li) {
-//     const event = li.querySelector(".edit-btn")
-//     console.log(1)
-//     event.addEventListener("click", () => {
-//         li.classList.add("editing")
-//     })
-//     saveData()
-// }
 
-// function doneEditToDo(li) {
-//     const event = li.querySelector(".done-btn")
-//     event.addEventListener("click", () => {
-//         const value1 = li.querySelector("#task-name-new")
-//         const value2 = li.querySelector(".task-name")
-//         // console.log(value1.value)
-//         value2.innerHTML = value1.value
-//         li.classList.remove("editing")
-//     })
-//     saveData()
-// }
-// function deleteToDo(li) {
-//     const event = li.querySelector(".delete-btn")
-//     event.addEventListener("click", () => {
-//         taskList.removeChild(li)
-//     })
-//     saveData()
-// }
-
-// function cancelEditToDo(li) {
-//     const event = li.querySelector(".close-btn")
-//     event.addEventListener("click", () => {
-//         const value1 = li.querySelector("#task-name-new")
-//         const value2 = li.querySelector(".task-name")
-//         value1.value = value2.innerHTML.trim()
-//     })
-//     saveData()
-// }
 
 taskList.addEventListener("click", (e) => {
-    console.log(e.target.className)
+
+    //linethrough
     if ((e.target.tagName.includes("LI")) && e.target.className.includes("editing") == false) {
         e.target.classList.toggle("checked")
         saveData()
@@ -86,11 +51,14 @@ taskList.addEventListener("click", (e) => {
         e.target.parentElement.classList.toggle("checked")
         saveData()
     }
+
+    //edit
     if (e.target.innerText == "edit") {
-        console.log(1)
         e.target.parentElement.classList.add("editing")
         saveData()
     }
+
+    //done
     if (e.target.innerText == "done") {
         let li = e.target.parentElement
         let value1 = li.querySelector(".task-name")
@@ -99,6 +67,8 @@ taskList.addEventListener("click", (e) => {
         e.target.parentElement.classList.remove("editing")
         saveData()
     }
+
+    //close
     if (e.target.innerText == "close") {
         let li = e.target.parentElement
         let value1 = li.querySelector(".task-name")
@@ -106,6 +76,8 @@ taskList.addEventListener("click", (e) => {
         value2.value = value1.innerHTML.trim()
         saveData()
     }
+
+    //delete
     if (e.target.innerText == "delete") {
         let li = e.target.parentElement
         li.parentElement.removeChild(li)
