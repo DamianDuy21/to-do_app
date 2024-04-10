@@ -57,6 +57,7 @@ li {
   border-radius: 32px;
   padding-left: 24px;
   margin-bottom: 12px;
+  width: 100%;
 }
 .todo-app .container .card .row input {
   flex-grow: 1;
@@ -64,7 +65,7 @@ li {
   font-size: 14px;
 }
 .todo-app .container .card .row button {
-  padding: 12px 32px;
+  padding: 12px 24px !important;
   background: #ff5945;
   color: #fff;
   font-size: 16px;
@@ -97,9 +98,10 @@ li {
 .todo-app .container .card #task-list {
   display: grid;
   gap: 6px;
-  max-width: 100%;
+  width: 100%;
 }
 .todo-app .container .card #task-list .task {
+  position: relative;
   font-size: 16px;
   padding: 12px 8px 12px 40px;
   -webkit-user-select: none;
@@ -109,10 +111,10 @@ li {
   cursor: pointer;
   display: flex;
   align-items: center !important;
-  max-width: 100%;
+  width: 100%;
 }
 .todo-app .container .card #task-list .task .task-name {
-  max-width: 300px;
+  width: 280px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -224,6 +226,6 @@ li {
     height: 40px !important;
   }
   .card #task-list .task .task-name {
-    width: 125px;
+    width: 125px !important;
   }
 }/*# sourceMappingURL=styles.css.map */

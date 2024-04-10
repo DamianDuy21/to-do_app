@@ -41,6 +41,7 @@ function addToDo(content) {
         <div class="task-name-form">
             <input type="text" id="task-name-new" value=${content}>
         </div>
+
         <span class="material-symbols-outlined edit-btn">
             edit
         </span>
@@ -56,6 +57,7 @@ function addToDo(content) {
         <span class="material-symbols-outlined done-btn">
             done
         </span>
+        
     `
     li.classList.add("task")
     taskList.appendChild(li)
@@ -71,7 +73,7 @@ taskList.addEventListener("click", (e) => {
         saveData()
     }
     if ((e.target.className.includes("task-name")) && e.target.className.includes("editing") == false) {
-        e.target.parentElement.classList.toggle("checked")
+        (e.target.parentElement).classList.toggle("checked")
         saveData()
     }
 
