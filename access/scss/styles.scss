@@ -71,7 +71,7 @@ li {
                 }
 
                 button {
-                    padding: 16px 40px;
+                    padding: 12px 32px;
                     background: #ff5945;
                     color: #fff;
                     font-size: 16px;
@@ -88,14 +88,14 @@ li {
                 flex-grow: 1;
                 color: #fff;
                 background: #403d84;
-                height: 48px;
+                height: 40px;
                 outline: none;
                 border: none;
                 border-radius: 32px;
                 appearance: none;
                 background-image: url("../../access/images/dropdown.png");
                 background-repeat: no-repeat;
-                background-size: 16px;
+                background-size: 12px;
                 background-position-x: calc(100% - 16px);
                 background-position-y: center;
                 margin-bottom: 24px;
@@ -248,8 +248,13 @@ li {
         .row {
             button {
                 padding: 12px 24px !important;
-                font-size: 14px !important;
+                font-size: 16px !important;
             }
+
+        }
+
+        select {
+            height: 40px !important;
         }
 
         #task-list {
