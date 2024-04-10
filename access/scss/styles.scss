@@ -35,7 +35,7 @@ li {
 
     .container {
         .card {
-            padding: 40px 32px 32px 32px;
+            padding: 40px 24px 32px 24px;
             background-color: #fff;
             border-radius: 12px;
             // min-height: 75vh;
@@ -245,10 +245,17 @@ li {
 
 @media (max-width: 576px) {
     .card {
+        .row {
+            button {
+                padding: 12px 24px !important;
+                font-size: 14px !important;
+            }
+        }
+
         #task-list {
             .task {
                 .task-name {
-                    width: 150px;
+                    width: 125px;
                 }
             }
         }
